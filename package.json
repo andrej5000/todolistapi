@@ -1,0 +1,33 @@
+{
+    "name": "todolistapi",
+    "version": "1.0.0",
+    "description": "RESTful todo list API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \\\"Error: no test specified\\\" && exit 1",
+        "start": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/HerrDredd/todolistapi.git"
+    },
+    "keywords": [
+        "RESTful",
+        "API",
+        "Tutorial"
+    ],
+    "author": "Dredd",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://gitlab.com/HerrDredd/todolistapi/issues"
+    },
+    "homepage": "https://gitlab.com/HerrDredd/todolistapi#readme",
+    "devDependencies": {
+        "nodemon": "1.18.10"
+    },
+    "dependencies": {
+        "body-parser": "1.18.3",
+        "express": "4.16.4",
+        "mongoose": "5.4.13"
+    }
+}
