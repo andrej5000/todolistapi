@@ -15,12 +15,21 @@ const TaskSchema = new Schema({
         default: Date.now
     },
     status: {
-        type: [{
-            type: String,
-            enum: ['pending', 'ongoing', 'completed']
-        }],
-        default: ['pending']
+        type: String,
+        enum: [
+            'pending',
+            'ongoing',
+            'completed'
+        ],
+        default: 'pending'
     }
 });
 
+
 module.exports = mongoose.model('Tasks', TaskSchema);
+
+/*
+const Task = require('./todoListModel');
+var task = new Task({ name: 'Tutti', status: 'ongoing' });
+console.log(task.save());
+*/

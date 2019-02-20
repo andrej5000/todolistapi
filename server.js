@@ -20,16 +20,14 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
 /*app.use(function(request, response) {
     response.status(404).send({url: request.originalUrl + ' not found'});
 });*/
 
 
-
 const routes = require('./api/routes/todoListRoutes'); // importing routes
 routes(app);
-
-
 
 app.listen(port);
 

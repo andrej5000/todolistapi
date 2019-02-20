@@ -8,7 +8,7 @@ exports.list_all_tasks = function (request, response) {
 
     Task.find({}, function (error, task) {
 
-        handleError(error);
+        handleError(error, response);
 
         response.json(task);
     })
@@ -21,7 +21,7 @@ exports.create_task = function (request, response) {
 
     new_task.save(function (error, task) {
 
-        handleError(error);
+        handleError(error, response);
 
         response.json(task);
     })
@@ -32,7 +32,7 @@ exports.read_task = function (request, response) {
 
     Task.findById(request.params.taskId, function (error, task) {
 
-        handleError(error);
+        handleError(error, response);
 
         response.json(task);
     });
@@ -42,12 +42,16 @@ exports.read_task = function (request, response) {
 exports.update_task = function (request, response) {
 
     Task.findOneAndUpdate(
-        {_id: request.params.taskId},
+        {
+            _id: request.params.taskId
+        },
         request.body,
-        {new: true},
+        {
+            new: true
+        },
         function (error, task) {
 
-            handleError(error);
+            handleError(error, response);
 
             response.json(task);
         }
@@ -70,7 +74,7 @@ exports.delete_task = function (request, response) {
         {_id: request.params.taskId},
         function (error, task) {
 
-            handleError(error);
+            handleError(error, response);
 
             response.json({
                 message: 'Task ´' + taskName + '´ successfully deleted'
